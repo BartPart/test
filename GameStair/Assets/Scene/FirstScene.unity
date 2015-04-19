@@ -148,6 +148,7 @@ GameObject:
   - 212: {fileID: 223499140}
   - 61: {fileID: 223499137}
   - 95: {fileID: 223499139}
+  - 114: {fileID: 223499141}
   m_Layer: 0
   m_Name: Dado1
   m_TagString: Untagged
@@ -223,6 +224,38 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1a4d5f2c2805cb64cbc9d3f26cbb4684, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+--- !u!114 &223499141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 223499136}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c84cc8aa81613d4d81a8f7c0b9bfb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &286411252
+GameObject:
+  m_PrefabParentObject: {fileID: 145224, guid: 2b12e9a4746eebb41bb2e06cd157b500, type: 2}
+  m_PrefabInternal: {fileID: 1763813925}
+--- !u!95 &286411253
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 286411252}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f82b05e80f0cb4941926db0d1764109f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &358239463
 Prefab:
   m_ObjectHideFlags: 0
@@ -649,6 +682,33 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 41b68c08607aa5746a660480cd3a9297, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1293094775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1293094776}
+  m_Layer: 0
+  m_Name: Avatar1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1293094776
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1293094775}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -45.7000008, y: -37.7999992, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
 --- !u!1001 &1448246031
 Prefab:
   m_ObjectHideFlags: 0
