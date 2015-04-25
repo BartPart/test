@@ -2,19 +2,19 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class preguntas {
+public class pregunta {
 	
-	string pregunta;
-	string respuesta1;
-	string respuesta2;
-	string respuesta3;
-	string respuesta4;
-	string respuesta5;
+	string question;
+	//string respuesta1;
+	//string respuesta2;
+	//string respuesta3;
+	//string respuesta4;
+	//string respuesta5;
 	int correcta; // el índice de la pregunta correcta
 	int id; /// id de la pregunta
-	
+	List<string>opciones;
 	//List<preguntas> Trivial = new List<preguntas>();
-	
+	/*
 	public preguntas(string pregunta, string respuesta1, string respuesta2, string respuesta3, string respuesta4, string respuesta5, int correcta, int id){
 		this.pregunta = pregunta;
 		this.respuesta1 = respuesta1;
@@ -24,18 +24,22 @@ public class preguntas {
 		this.id = id;
 		this.correcta = correcta;
 	}
+	*/
 	
-	public void agregarPregunta(string pregunta, string respuesta1, string respuesta2, string respuesta3, string respuesta4, string respuesta5, int correcta, int id)
-	{
-		preguntas p = new preguntas(pregunta, respuesta1, respuesta1, respuesta3, respuesta4, respuesta5, correcta, id);
-		//Trivial.Add (p);
+	
+	public pregunta(string pregunta, int correcta, int id){
+		this.question = pregunta;
+		this.id = id;
+		this.correcta = correcta;
 	}
-
-	public string getPregunta()
+	
+	
+	public string getQuestion()
 	{
-		return pregunta;
+		return question;
 	}
-
+	
+	/*
 	public string getResp1()
 	{
 		return respuesta1;
@@ -60,16 +64,30 @@ public class preguntas {
 	{
 		return respuesta5;
 	}
-/*	
+	*/
+	
+	public void setListaOpciones(List<string>options)
+	{
+		this.opciones = options;
+	}
+	
+	public List<string> getOpciones()
+	{
+		return opciones;
+	}
+	
+	
+	/*	
  * 
 	void Start(){
 		questions ();
 	}
 	
-	public void questions ()
+public void questions ()
 	{	
+
 		//Pregunta 1
-		string preg = "La inmunidad innata se caracteriza por ser inespecifica y actuar inmediatamente, señale los elementos Humorales y Celulares propios de esta:";
+		string preg = "La inmunidad innata se caracteriza por ser inespecifica y actuar inmediatamente," +"\n" + "señale los elementos Humorales y Celulares propios de esta:";
 		string resp1 = "Linfocitos T - Anticuerpos";
 		string resp2 = "Macrofagos - Lisozima";
 		string resp3 = "Complemento";
@@ -82,11 +100,11 @@ public class preguntas {
 		Trivial.Add (p1);
 		
 		//Pregunta 2
-		preg = "De las siguientes opciones, señale la definicion que corresponda al termino Hapteno.";
-		resp1 = "Molécula glicoproteína que tiene la capacidad de reconocer un antígeno especifico.";
-		resp2 = "Molécula de la superficie celular de los LT que facilita el proceso de activación de los linfocitos B.";
-		resp3 = "Antígeno incompleto, que para ser reconocido por el sistema inmune requiere de la colaboración de un adyuvante.";
-		resp4 = "Molécula presente en algunos virus( VIH), Bacterias(Streptococos, Stafilococos) y Parasitos( Plasmodium) que producen una activación policlonal masiva equivalente al 20% de las células del sistema inmune";
+		preg = "De las siguientes opciones,"+"\n"+ "señale la definicion que corresponda al termino Hapteno.";
+		resp1 = "Molécula glicoproteína que tiene la capacidad"+"\n"+ "de reconocer un antígeno especifico.";
+		resp2 = "Molécula de la superficie celular de los LT"+"\n"+ "que facilita el proceso de activación"+"\n"+ "de los linfocitos B.";
+		resp3 = "Antígeno incompleto, que para ser reconocido"+"\n"+ "por el sistema inmune requiere de la"+"\n"+ "colaboración de un adyuvante.";
+		resp4 = "Molécula presente en algunos virus( VIH),"+"\n"+ "Bacterias(Streptococos, Stafilococos) y "+"\n"+ "Parasitos(Plasmodium) que producen una activación"+"\n"+ " policlonal masiva equivalente al 20% "+"\n"+ "de las células del sistema inmune";
 		
 		respv = 3;
 		id = 2;
@@ -95,7 +113,7 @@ public class preguntas {
 		Trivial.Add (p2);
 		
 		//Pregunta 3
-		preg = "Señale en cual de los siguientes organos linfoides ocurre la seleccion positiva y negativa de los LT (Linfositos T).";
+		preg = "Señale en cual de los siguientes organos linfoides "+"\n"+ "ocurre la seleccion positiva y negativa de los LT (Linfositos T).";
 		resp1 = "Medula osea fetal.";
 		resp2 = "Bazo.";
 		resp3 = "Higado Fetal.";
@@ -109,7 +127,7 @@ public class preguntas {
 		Trivial.Add (p3);
 		
 		//Pregunta 4
-		preg = "El Complejo de ataque a membrana (mac) es el mecansismo final efector del complemento mediante el cual se generan poros en la membrana de la celula blanco y posteriormente se da la lisis osmotica, señale las moleculas del complemento que constituyen este complejo.";
+		preg = "El Complejo de ataque a membrana (mac)"+"\n"+ "es el mecansismo final efector del complemento mediante el cual"+"\n"+ "se generan poros en la membrana de la celula blanco y "+"\n"+ "posteriormente se da la lisis osmotica, "+"\n"+ "señale las moleculas del complemento "+"\n"+ "que constituyen este complejo.";
 		resp1 = "C5bC6C7C8C9n.";
 		resp2 = "C3b-Fb.";
 		resp3 = "Properdin C3b-Fb";
@@ -123,7 +141,7 @@ public class preguntas {
 		Trivial.Add (p4);
 		
 		//Pregunta 5
-		preg = "Seleccione de las siguientes proteinas del complemento cuales hacen parte  de las anafilotoxinas:";
+		preg = "Seleccione de las siguientes proteinas del "+"\n"+ "complemento cuales hacen parte  de las anafilotoxinas:";
 		resp1 = "C9.";
 		resp2 = "C1q.";
 		resp3 = "C3a";
@@ -137,7 +155,7 @@ public class preguntas {
 		Trivial.Add (p5);
 		
 		//Pregunta 6
-		preg = "Los anticuerpos son glicoproteínas de gran peso molecular secretadas por los linfocitos b activados(células plasmáticas) por los lt helper como resultado de la respuesta inmune especifica, señale cual es el anticuerpo predominante en la respuesta inmune secundaria:";
+		preg = "Los anticuerpos son glicoproteínas de gran peso molecular "+"\n"+ "secretadas por los linfocitos b activados(células plasmáticas) "+"\n"+ "por los lt helper como resultado de la respuesta inmune especifica,"+"\n"+ "señale cual es el anticuerpo predominante"+"\n"+ " en la respuesta inmune secundaria:";
 		resp1 = "IgD.";
 		resp2 = "IgG.";
 		resp3 = "IgA";
@@ -151,7 +169,7 @@ public class preguntas {
 		Trivial.Add (p6);
 		
 		//Pregunta 7
-		preg = "Las inmunoglobulinas  de acuerdo a  su estructura y peso molecular pueden o no atravesar la barrera placentaria, señale cual de las siguientes inmunoglobulinas no atraviesa la barrera placentaria:";
+		preg = "Las inmunoglobulinas  de acuerdo a  su estructura y peso molecular "+"\n"+ "pueden o no atravesar la barrera placentaria, señale cual de las siguientes "+"\n"+ "inmunoglobulinas no atraviesa la barrera placentaria:";
 		resp1 = "IgD.";
 		resp2 = "IgG.";
 		resp3 = "IgM";
@@ -182,7 +200,7 @@ public class preguntas {
 		preg = "Señale las características de la respuesta inmune inespecífica:";
 		resp1 = "Depende principalmente de los Linfocitos B y T.";
 		resp2 = "Es específica y de memoria.";
-		resp3 = "Facilita los mecanismos efectores al  integrarse con la inmunidad específica";
+		resp3 = "Facilita los mecanismos efectores al  "+"\n"+ "integrarse con la inmunidad específica";
 		resp4 = "Es rápida y no se intensifica con los contactos ulteriores.";
 		resp5 = "En ella prima la IgM ";
 		
@@ -195,7 +213,7 @@ public class preguntas {
 		//Pregunta 10
 		preg = "Señale cual de los elementos  NO es un componente de la inmunidad innata:";
 		resp1 = "Flora bacteriana.";
-		resp2 = "Factores constitutivos (Genéticos-Hormonales-Metabólicos).";
+		resp2 = "Factores constitutivos "+"\n"+ "(Genéticos-Hormonales-Metabólicos).";
 		resp3 = "Proteína C reactiva";
 		resp4 = "Células plasmáticas.";
 		resp5 = "Fagocitosis.";
@@ -221,7 +239,7 @@ public class preguntas {
 		Trivial.Add (p11);
 		
 		//Pregunta 12
-		preg = "Durante el desarrollo embrionario los linfocitos T deben recibir una serie de receptores de membrana que permiten su selección clonal y ulterior  desarrollo y , señale en el órgano que ocurre este proceso:";
+		preg = "Durante el desarrollo embrionario los linfocitos T "+"\n"+ "deben recibir una serie de receptores de membrana que "+"\n"+ "permiten su selección clonal y ulterior  desarrollo Y,"+"\n"+ "señale en el órgano que ocurre este proceso:";
 		resp1 = "Bazo.";
 		resp2 = "Páncreas.";
 		resp3 = "Hígado";
@@ -265,7 +283,7 @@ public class preguntas {
 		//Pregunta 15
 		preg = "Son funciones del complemento excepto:";
 		resp1 = "Activación de PMN - Activación de Linfocitos T.";
-		resp2 = "Lisis bacteriana mediante CAM - Potencializa la producción de anticuerpos - Opzonización.";
+		resp2 = "Lisis bacteriana mediante CAM"+"\n"+ "Potencializa la producción de anticuerpos"+"\n"+ "Opzonización.";
 		resp3 = null;
 		resp4 = null;
 		resp5 = null;
@@ -319,7 +337,7 @@ public class preguntas {
 		Trivial.Add (p18);
 		
 		//Pregunta 19
-		preg = "Señale la fracción de los anticuerpos en la que reside las  funciones efectoras de los anticuerpos tales como fijación de complemento:";
+		preg = "Señale la fracción de los anticuerpos en la que reside las "+"\n"+ "funciones efectoras de los anticuerpos tales como fijación de complemento:";
 		resp1 = "FAB.";
 		resp2 = "Paratope.";
 		resp3 = "Puentes disulfuro.";
@@ -389,12 +407,12 @@ public class preguntas {
 		Trivial.Add (p23);
 		
 		//Pregunta 24
-		preg = "Señale cuales de las siguientes son células presentadoras profesionales de antígenos:";
-		resp1 = "Linfocitos T citotoxicos - Mastocitos.";
-		resp2 = "Macrófagos - Células dendrítica.";
-		resp3 = "Mastocitos - Macrófagos.";
-		resp4 = "Células dendríticas - Linfocitos B.";
-		resp5 = "Linfocitos B - Linfocitos T citotoxicos.";
+		preg = "Señale cuales de las siguientes son células"+"\n"+ "presentadoras profesionales de antígenos:";
+		resp1 = "Linfocitos T citotoxicos "+"\n"+ "Mastocitos.";
+		resp2 = "Macrófagos"+"\n"+ "Células dendrítica.";
+		resp3 = "Mastocitos"+"\n"+ "Macrófagos.";
+		resp4 = "Células dendríticas"+"\n"+ "Linfocitos B.";
+		resp5 = "Linfocitos B"+"\n"+ "Linfocitos T citotoxicos.";
 		
 		respv = 4;
 		id = 24;
@@ -404,12 +422,12 @@ public class preguntas {
 		
 		
 		//Pregunta 25
-		preg = "Señales cuales de las siguientes moléculas están involucradas en la actividad efectora citotoxica de los LT:";
-		resp1 = "Granzima - Perforina.";
-		resp2 = "Complemento - IgM.";
-		resp3 = "Lisozima - Granzima.";
-		resp4 = "Complemento - IgM.";
-		resp5 = "IgM - Perforina.";
+		preg = "Señales cuales de las siguientes moléculas están involucradas"+"\n"+ " en la actividad efectora citotoxica de los LT:";
+		resp1 = "Granzima"+"\n"+ "Perforina.";
+		resp2 = "Complemento"+"\n"+ "IgM.";
+		resp3 = "Lisozima"+"\n"+ "Granzima.";
+		resp4 = "Complemento"+"\n"+ "IgM.";
+		resp5 = "IgM"+"\n"+ "Perforina.";
 		
 		respv = 1;
 		id = 25;
@@ -432,10 +450,10 @@ public class preguntas {
 		Trivial.Add (p26);
 		
 		//Pregunta 27
-		preg = "Los linfocitos T citotoxicos ejercen su acción mediante los siguiente mecanismos efectores, señales las opciones  correctas:";
+		preg = "Los linfocitos T citotoxicos ejercen su acción mediante los siguiente mecanismos efectores,"+"\n"+ "señales las opciones  correctas:";
 		resp1 = "Activación de complemento por la vida clásica.";
-		resp2 = "Secreción de gránulos citotoxicos que contienen perforinas - Activación de la citocromo c y caspasas por las  granzimas.";
-		resp3 = "Inhibición de la actividad de las proteínas transportadoras de antígeno(TAP1,TAP2).";
+		resp2 = "Secreción de gránulos citotoxicos que contienen perforinas"+"\n"+ "Activación de la citocromo c "+"\n"+ "caspasas por las  granzimas.";
+		resp3 = "Inhibición de la actividad de las proteínas "+"\n"+ "transportadoras de antígeno(TAP1,TAP2).";
 		resp4 = "Proteina P50.";
 		resp5 = "Hemoglobina.";
 		
@@ -504,8 +522,8 @@ public class preguntas {
 		//Pregunta 32
 		preg = "Señale cual es el papel de la inmunidad humoral contra los virus:";
 		resp1 = "Tienen actividad antiviral directa.";
-		resp2 = "Bloquea la unión del virus a la célula hospedera, con lo cual se  previene la infección o la reinfección (IgAs) - Mejora la fagocitosis de las partículas virales( Opsonización) - Aglutinación de las partículas virales IgG, IgM e IgA - Media la opzonización por C3b y lisa las partículas virales envueltas por el CAM";
-		resp3 = "Media la opzonización por C3b y lisa las partículas virales envueltas por el CAM. - Tienen actividad antiviral directa";
+		resp2 = "Bloquea la unión del virus a la célula hospedera, "+"\n"+ "con lo cual se  previene la infección o la reinfección (IgAs)."+"\n"+ "Mejora la fagocitosis de las partículas virales(Opsonización)."+"\n"+ "Aglutinación de las partículas virales IgG, IgM e IgA."+"\n"+ "Media la opzonización por C3b."+"\n"+ "Lisa las partículas virales envueltas por el CAM";
+		resp3 = "Media la opzonización por C3b."+"\n"+ "Lisa las partículas virales envueltas por el CAM."+"\n"+ "Tienen actividad antiviral directa";
 		resp4 = null;
 		resp5 = null;
 		
@@ -516,11 +534,11 @@ public class preguntas {
 		Trivial.Add (p32);
 		
 		//Pregunta 33
-		preg = "Señale cual de los siguientes mecanismos  corresponde a una estrategia de evasión de la respuesta inmune por parte de los protozoos:";
-		resp1 = "Síntesis de moléculas inmunopotenciadoras - Mutación de los genes del complemento.";
-		resp2 = "Mutación de los genes del complemento - Síntesis de proteínas inmunosupresoras.";
-		resp3 = "Síntesis de moléculas inmunopotenciadoras - Expresión de superantigenos.";
-		resp4 = "Expresión de superantigenos - Mimetismo molecular - Síntesis de proteínas inmunosupresoras";
+		preg = "Señale cual de los siguientes mecanismos corresponde a una "+"\n"+ "estrategia de evasión de la respuesta inmune por parte de los protozoos:";
+		resp1 = "Síntesis de moléculas inmunopotenciadoras."+"\n"+ "Mutación de los genes del complemento.";
+		resp2 = "Mutación de los genes del complemento."+"\n"+ "Síntesis de proteínas inmunosupresoras.";
+		resp3 = "Síntesis de moléculas inmunopotenciadoras."+"\n"+ "Expresión de superantigenos.";
+		resp4 = "Expresión de superantigenos."+"\n"+ "Mimetismo molecular."+"\n"+ "Síntesis de proteínas inmunosupresoras";
 		resp5 = null;
 		
 		respv = 4;
@@ -530,7 +548,7 @@ public class preguntas {
 		Trivial.Add (p33);
 		
 		//Pregunta 34
-		preg = "Cual de las siguientes inmunoglobulinas  permiten la opsoniza  de los parásito y la unión  de los  eosinófilos a través de sus receptores para fc épsilon:";
+		preg = "Cual de las siguientes inmunoglobulinas permiten la opsoniza de los parásitos"+"\n"+ " y la unión  de los  eosinófilos a través de sus receptores para fc épsilon:";
 		resp1 = "IgA secretoria.";
 		resp2 = "IgE.";
 		resp3 = "IgM.";
@@ -558,7 +576,7 @@ public class preguntas {
 		Trivial.Add (p35);
 		
 		//Pregunta 36
-		preg = "Seleccione de las siguientes bacterias  aquellas que utilizan como estrategia de evasión del sistema inmune la variación antigenica:";
+		preg = "Seleccione de las siguientes bacterias aquellas que utilizan"+"\n"+ " como estrategia de evasión del sistema inmune la variación antigenica:";
 		resp1 = "Treponema Palidum.";
 		resp2 = "E. coli.";
 		resp3 = "Staphilococus aureus.";
@@ -572,7 +590,7 @@ public class preguntas {
 		Trivial.Add (p36);
 		
 		//Pregunta 37
-		preg = "Señale cual de los siguientes virus  utiliza como estrategia de evasión la  inhibición del procesamiento antigénico  al bloquear el transporte de antígenos por parte del tap:";
+		preg = "Señale cual de los siguientes virus utiliza como estrategia de evasión"+"\n"+ "la inhibición del procesamiento antigénico al bloquear"+"\n"+ "el transporte de antígenos por parte del tap:";
 		resp1 = "Rinovirus.";
 		resp2 = "Enterovirus.";
 		resp3 = "VIH.";
@@ -614,7 +632,7 @@ public class preguntas {
 		Trivial.Add (p39);
 		
 		//Pregunta 40
-		preg = "La respuesta inmune se divide en innata y adquirida, seleccione el tipo de mecanismo químico o celular que corresponda a la respuesta adquirida:";
+		preg = "La respuesta inmune se divide en innata y adquirida"+"\n"+ "seleccione el tipo de mecanismo químico o celular"+"\n"+ " que corresponda a la respuesta adquirida:";
 		resp1 = "Lisozimas.";
 		resp2 = "Complemento.";
 		resp3 = "Células dendríticas.";
@@ -626,6 +644,9 @@ public class preguntas {
 		
 		preguntas p40 = new preguntas(preg, resp1, resp2, resp3, resp4, resp5, respv, id);
 		Trivial.Add (p40);
+
+		string p = Trivial [i].getPregunta();
+		formato (p);
 	}
 	
 	

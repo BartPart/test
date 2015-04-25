@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: 1a4d5f2c2805cb64cbc9d3f26cbb4684
-timeCreated: 1426486455
+guid: c1e1f4a57b8465f46a880dca8807755e
+timeCreated: 1429991059
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: dados_0
-    21300002: dados_1
-    21300004: dados_2
-    21300006: dados_3
-    21300008: dados_4
-    21300010: dados_5
+    21300000: dado sf_0
+    21300002: dado sf_1
+    21300004: dado sf_2
+    21300006: dado sf_3
+    21300008: dado sf_4
+    21300010: dado sf_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,63 +55,63 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: dados_0
+    - name: dado sf_0
       rect:
         serializedVersion: 2
-        x: 100
-        y: 923
-        width: 350
-        height: 320
+        x: 28
+        y: 850
+        width: 284
+        height: 283
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: dados_1
+    - name: dado sf_1
       rect:
         serializedVersion: 2
-        x: 560
-        y: 923
-        width: 350
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: dados_2
-      rect:
-        serializedVersion: 2
-        x: 100
-        y: 493
-        width: 350
-        height: 320
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: dados_3
-      rect:
-        serializedVersion: 2
-        x: 560
-        y: 490
-        width: 350
-        height: 320
+        x: 492
+        y: 856
+        width: 280
+        height: 276
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: dados_4
+    - name: dado sf_2
       rect:
         serializedVersion: 2
-        x: 100
-        y: 63
-        width: 350
-        height: 320
+        x: 28
+        y: 428
+        width: 280
+        height: 276
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: dados_5
+    - name: dado sf_3
       rect:
         serializedVersion: 2
-        x: 560
-        y: 63
-        width: 350
-        height: 320
+        x: 492
+        y: 428
+        width: 280
+        height: 276
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dado sf_4
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 280
+        height: 276
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: dado sf_5
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 0
+        width: 280
+        height: 276
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
