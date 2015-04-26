@@ -8,13 +8,17 @@ public class StopDice : MonoBehaviour {
 	// Declare variables
 	private bool isHeld;
 	private int clicks;
-	public Animation anim;
+	public Animator anim;
+	public SpriteRenderer animacion;
+	public int valor;
 
 
 	void Start ()
 	{
 		clicks =0;
-		anim = GetComponent<Animation>();
+		anim = GetComponent<Animator>();
+		animacion = GetComponent<SpriteRenderer>();
+		valor = 0;
 
 		
 	}
@@ -24,20 +28,57 @@ public class StopDice : MonoBehaviour {
 	{
 		if (Input.GetMouseButtonDown(0))
 		{
-			OnMouseUp();
 			stop();
+			obtenerValor();
+			
 		}
 	}
 
-	void OnMouseUp ()
+	public void obtenerValor()
 	{
+		if (anim.speed == 0) {
 
-
+			if(animacion.sprite.name.Equals("dado sf_0"))
+			{
+				valor=1;
+				Debug.Log(valor);
+			}
+			if(animacion.sprite.name.Equals("dado sf_1"))
+			{
+				valor=2;
+				Debug.Log(valor);
+			}
+			if(animacion.sprite.name.Equals("dado sf_2"))
+			{
+				valor=3;
+				Debug.Log(valor);
+			}
+			if(animacion.sprite.name.Equals("dado sf_3"))
+			{
+				valor=4;
+				Debug.Log(valor);
+			}
+			if(animacion.sprite.name.Equals("dado sf_4"))
+			{
+				valor=5;
+				Debug.Log(valor);
+			}
+			if(animacion.sprite.name.Equals("dado sf_5"))
+			{
+				valor=6;
+				Debug.Log(valor);
+			}
+		}
 	}
 
 	public void stop(){
 
-		anim.Stop();
+		if (anim.speed > 0) {
+		
+			anim.speed = 0;
+		} else {
+			anim.speed=1;
+		}
 
 
 	}
