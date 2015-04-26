@@ -13,30 +13,35 @@ public class StopDice : MonoBehaviour {
 
 	void Start ()
 	{
-		clicks = 0;
+		clicks =0;
+		anim = GetComponent<Animation>();
 
-
+		
 	}
 
 	// Update is called once per frame
 	void Update ()
 	{
-
-
 		if (Input.GetMouseButtonDown(0))
 		{
 			OnMouseUp();
-
+			stop();
 		}
 	}
 
 	void OnMouseUp ()
 	{
-		isHeld = false;
-		Debug.Log("Usted toco el dado!");
-		//animation.stop();
+
 
 	}
+
+	public void stop(){
+
+		anim.Stop();
+
+
+	}
+	
 
 
 
