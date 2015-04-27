@@ -18,21 +18,23 @@ public class movimiento : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 
-		int valorMov=scriptDice.valor;
 
-		if (scriptDice.anim.speed == 0)
-		{
 
-			float move = Input.GetAxis("Horizontal");
-			GetComponent<Rigidbody2D>().velocity = new Vector2(valorMov, GetComponent<Rigidbody2D>().velocity.y);
+		if (scriptDice.anim.speed == 0) {
+
+			int valorMov=scriptDice.valor;
+			Debug.Log ("entro al update");
+			float move = Input.GetAxis ("Horizontal");
+			GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * valorMov, GetComponent<Rigidbody2D> ().velocity.y);
+			
+			if (move > 0 && !facingRight)
+				flip ();
+			else if (move < 0 && facingRight)
+				flip ();
+		} else {
+			Debug.Log("no entro");
 		}
-		//float move = Input.GetAxis ("Horizontal");
-		//GetComponent<Rigidbody2D>().velocity = new Vector2 (move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
 
-		//if (move > 0 && !facingRight)
-		//	flip ();
-		//else if (move < 0 && facingRight)
-		//	flip ();
 	}
 
 	void flip()

@@ -15,10 +15,10 @@ public class StopDice : MonoBehaviour {
 
 	void Start ()
 	{
-		clicks =0;
 		anim = GetComponent<Animator>();
 		animacion = GetComponent<SpriteRenderer>();
 		valor = 0;
+
 
 		
 	}
@@ -26,9 +26,13 @@ public class StopDice : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
+	
+
 		if (Input.GetMouseButtonDown(0))
 		{
-			stop();
+			startDice();
+			//delay();
+			//Stop();
 			obtenerValor();
 			
 		}
@@ -71,16 +75,23 @@ public class StopDice : MonoBehaviour {
 		}
 	}
 
-	public void stop(){
+	public void startDice(){
 
-		if (anim.speed > 0) {
+		if (anim.speed == 1) {
 		
 			anim.speed = 0;
 		} else {
-			anim.speed=1;
+
+			anim.speed = 1;
 		}
+	}
+	public void Stop()
+	{
 
-
+	}
+	public void delay()
+	{
+		anim.StartPlayback ();
 	}
 	
 
