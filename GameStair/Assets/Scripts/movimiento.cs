@@ -16,16 +16,26 @@ public class movimiento : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void FixedUpdate () {
+	void fixedUpdate () {
+
+		int valorMov = scriptDice.valor;
 
 
+		if (valorMov == 1) {
 
-		if (scriptDice.anim.speed == 0) {
 
+			Debug.Log(scriptDice.valor);
+
+			//float move = Input.GetAxis ("Horizontal");
+
+			/*
 			int valorMov=scriptDice.valor;
 			Debug.Log ("entro al update");
-			float move = Input.GetAxis ("Horizontal");
+
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * valorMov, GetComponent<Rigidbody2D> ().velocity.y);
+
+
+			Debug.Log("paro el dado");
 			
 			if (move > 0 && !facingRight)
 				flip ();
@@ -44,5 +54,8 @@ public class movimiento : MonoBehaviour {
 		theScale.x *= -1;
 		transform.localScale = theScale;
 
+	}*/
+		
+}
 	}
 }

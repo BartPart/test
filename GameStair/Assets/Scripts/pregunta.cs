@@ -5,18 +5,18 @@ using System.Collections.Generic;
 public class pregunta {
 	
 	string question;
-	//string respuesta1;
-	//string respuesta2;
-	//string respuesta3;
-	//string respuesta4;
-	//string respuesta5;
+	string respuesta1;
+	string respuesta2;
+	string respuesta3;
+	string respuesta4;
+	string respuesta5;
 	int correcta; // el índice de la pregunta correcta
 	int id; /// id de la pregunta
-	List<string>opciones;
+	//List<string>opciones;
 	//List<preguntas> Trivial = new List<preguntas>();
-	/*
-	public preguntas(string pregunta, string respuesta1, string respuesta2, string respuesta3, string respuesta4, string respuesta5, int correcta, int id){
-		this.pregunta = pregunta;
+
+	public pregunta(string pregunta, string respuesta1, string respuesta2, string respuesta3, string respuesta4, string respuesta5, int correcta, int id){
+		this.question = pregunta;
 		this.respuesta1 = respuesta1;
 		this.respuesta2 = respuesta2;
 		this.respuesta3 = respuesta3;
@@ -24,22 +24,22 @@ public class pregunta {
 		this.id = id;
 		this.correcta = correcta;
 	}
-	*/
+
 	
-	
+	/*
 	public pregunta(string pregunta, int correcta, int id){
 		this.question = pregunta;
 		this.id = id;
 		this.correcta = correcta;
 	}
-	
+*/
 	
 	public string getQuestion()
 	{
 		return question;
 	}
 	
-	/*
+
 	public string getResp1()
 	{
 		return respuesta1;
@@ -64,8 +64,8 @@ public class pregunta {
 	{
 		return respuesta5;
 	}
-	*/
-	
+
+	/*
 	public void setListaOpciones(List<string>options)
 	{
 		this.opciones = options;
@@ -75,6 +75,8 @@ public class pregunta {
 	{
 		return opciones;
 	}
+*/
+
 	
 	
 	/*	
