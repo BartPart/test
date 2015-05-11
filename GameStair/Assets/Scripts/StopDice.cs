@@ -10,7 +10,8 @@ public class StopDice : MonoBehaviour {
 	private int clicks;
 	public Animator anim;
 	public SpriteRenderer animacion;
-	public int valor{ get; set; }
+	public int valor;
+	public Rigidbody2D rigit;
 
 	List<pregunta> Trivial = new List<pregunta>();
 	public Rect windowRect;// = new Rect(10, 20, 850, 400);
@@ -19,25 +20,39 @@ public class StopDice : MonoBehaviour {
 	{
 		anim = GetComponent<Animator>();
 		animacion = GetComponent<SpriteRenderer>();
+		rigit = GetComponent<Rigidbody2D>();
 		valor = 0;
+
 	}
-	
+
+
 
 	// Update is called once per frame
 	void Update ()
 	{
 	
 
-		if (Input.GetMouseButtonDown(0))
+		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
 		{
 			startDice();
-			//delay();
-			//Stop();
 			obtenerValor();
-			
+
 		}
 	}
-	
+	void fixedUpdate()
+	{
+		
+		if (anim.speed == 0) {
+			
+			moverNave();
+		}
+		
+	}
+	public void moverNave()
+	{
+		rigit.MovePosition (new Vector2 (valor, 0));
+	}
+
 	public void obtenerValor()
 	{
 		if (anim.speed == 0) {

@@ -7,11 +7,14 @@ public class movimiento : MonoBehaviour {
 	public Vector2 velocity;
 	bool facingRight = true;
 	StopDice scriptDice;
+	Rigidbody2D rigit;
+
 
 	// Use this for initialization
 	void Start () {
 
 		scriptDice = GetComponent<StopDice>();
+		rigit = GetComponent<Rigidbody2D>();
 	
 	}
 	
@@ -21,10 +24,11 @@ public class movimiento : MonoBehaviour {
 		int valorMov = scriptDice.valor;
 
 
-		if (valorMov == 1) {
 
 
-			Debug.Log(scriptDice.valor);
+		if (valorMov != 1) {
+			Debug.Log("antes del rigit");
+			rigit.AddForce (new Vector2(valorMov, 0));
 
 			//float move = Input.GetAxis ("Horizontal");
 

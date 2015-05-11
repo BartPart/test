@@ -652,6 +652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   anim: {fileID: 1486032759}
   animacion: {fileID: 1486032761}
+  valor: 0
   windowRect:
     serializedVersion: 2
     x: 0
