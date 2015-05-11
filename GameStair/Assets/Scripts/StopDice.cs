@@ -11,17 +11,17 @@ public class StopDice : MonoBehaviour {
 	public Animator anim;
 	public SpriteRenderer animacion;
 	public int valor;
-	public Rigidbody2D rigit;
+
 
 	List<pregunta> Trivial = new List<pregunta>();
-	public Rect windowRect;// = new Rect(10, 20, 850, 400);
+	private Rect windowRect;// = new Rect(10, 20, 850, 400);
 
 	void Start ()
 	{
 		anim = GetComponent<Animator>();
 		animacion = GetComponent<SpriteRenderer>();
-		rigit = GetComponent<Rigidbody2D>();
 		valor = 0;
+
 
 	}
 
@@ -35,58 +35,42 @@ public class StopDice : MonoBehaviour {
 		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
 		{
 			startDice();
-			obtenerValor();
 
 		}
 	}
-	void fixedUpdate()
-	{
-		
-		if (anim.speed == 0) {
-			
-			moverNave();
-		}
-		
-	}
-	public void moverNave()
-	{
-		rigit.MovePosition (new Vector2 (valor, 0));
-	}
 
-	public void obtenerValor()
+
+
+	public int obtenerValor()
 	{
 		if (anim.speed == 0) {
 
-			if(animacion.sprite.name.Equals("dado sf_0"))
-			{
-				valor=1;
+			if (animacion.sprite.name.Equals ("dado sf_0")) {
+				return 1;
+			}
+			if (animacion.sprite.name.Equals ("dado sf_1")) {
+				return 2;
 
 			}
-			if(animacion.sprite.name.Equals("dado sf_1"))
-			{
-				valor=2;
+			if (animacion.sprite.name.Equals ("dado sf_2")) {
+				return 3;
 
 			}
-			if(animacion.sprite.name.Equals("dado sf_2"))
-			{
-				valor=3;
-
-			}
-			if(animacion.sprite.name.Equals("dado sf_3"))
-			{
-				valor=4;
+			if (animacion.sprite.name.Equals ("dado sf_3")) {
+				return 4;
 	
 			}
-			if(animacion.sprite.name.Equals("dado sf_4"))
-			{
-				valor=5;
+			if (animacion.sprite.name.Equals ("dado sf_4")) {
+				return 5;
 
 			}
-			if(animacion.sprite.name.Equals("dado sf_5"))
-			{
-				valor=6;
+			if (animacion.sprite.name.Equals ("dado sf_5")) {
+				return 6;
 	
 			}
+			return 0;
+		} else {
+			return 0;
 		}
 	}
 

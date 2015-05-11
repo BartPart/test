@@ -3,63 +3,40 @@ using System.Collections;
 
 public class movimiento : MonoBehaviour {
 
-	public float maxSpeed = 10f;
-	public Vector2 velocity;
-	bool facingRight = true;
-	StopDice scriptDice;
-	Rigidbody2D rigit;
+
+	public Rigidbody2D rigit;
+	private StopDice stopdado;
+	private Vector2 vector2;
+
 
 
 	// Use this for initialization
 	void Start () {
-
-		scriptDice = GetComponent<StopDice>();
 		rigit = GetComponent<Rigidbody2D>();
+		stopdado = GetComponent<StopDice>();
 	
 	}
 	
 	// Update is called once per frame
-	void fixedUpdate () {
+	void FixedUpdate()
+	{
+		int valor=stopdado.obtenerValor();
 
-		int valorMov = scriptDice.valor;
+		if (valor != 0) {
 
+			Debug.Log("entro");
+			moverNave();
 
-
-
-		if (valorMov != 1) {
-			Debug.Log("antes del rigit");
-			rigit.AddForce (new Vector2(valorMov, 0));
-
-			//float move = Input.GetAxis ("Horizontal");
-
-			/*
-			int valorMov=scriptDice.valor;
-			Debug.Log ("entro al update");
-
-			GetComponent<Rigidbody2D> ().velocity = new Vector2 (move * valorMov, GetComponent<Rigidbody2D> ().velocity.y);
-
-
-			Debug.Log("paro el dado");
-			
-			if (move > 0 && !facingRight)
-				flip ();
-			else if (move < 0 && facingRight)
-				flip ();
-		} else {
-			Debug.Log("no entro");
 		}
 
-	}
-
-	void flip()
-	{
-		facingRight = !facingRight;
-		Vector3 theScale = transform.localScale;
-		theScale.x *= -1;
-		transform.localScale = theScale;
-
-	}*/
 		
-}
+	}
+	public void moverNave()
+	{
+		//vector2 = new Vector2 (valor, 0);
+		
+		//rigit.MovePosition (rigit.position + vector2);
+		//rigit.transform.position = vector2;
 	}
 }
+
