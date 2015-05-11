@@ -10,67 +10,60 @@ public class StopDice : MonoBehaviour {
 	private int clicks;
 	public Animator anim;
 	public SpriteRenderer animacion;
-	public int valor{ get; set; }
+	public int valor
 
-	List<pregunta> Trivial = new List<pregunta>();
-	public Rect windowRect;// = new Rect(10, 20, 850, 400);
+	//List<pregunta> Trivial = new List<pregunta>();
+	//public Rect windowRect;// = new Rect(10, 20, 850, 400);
 
 	void Start ()
 	{
 		anim = GetComponent<Animator>();
+		//rigit = GetComponent<Rigidbody2D> ();
 		animacion = GetComponent<SpriteRenderer>();
-		valor = 0;
 	}
 	
 
 	// Update is called once per frame
 	void Update ()
 	{
-	
 
 		if (Input.GetMouseButtonDown(0))
 		{
 			startDice();
 			//delay();
 			//Stop();
-			obtenerValor();
-			
+
 		}
 	}
+
 	
-	public void obtenerValor()
+	public int obtenerValor()
 	{
 		if (anim.speed == 0) {
 
 			if(animacion.sprite.name.Equals("dado sf_0"))
 			{
-				valor=1;
-
+				return 1;
 			}
 			if(animacion.sprite.name.Equals("dado sf_1"))
 			{
-				valor=2;
-
+				return 2;
 			}
 			if(animacion.sprite.name.Equals("dado sf_2"))
 			{
-				valor=3;
-
+				return 3;
 			}
 			if(animacion.sprite.name.Equals("dado sf_3"))
 			{
-				valor=4;
-	
+				return 4;	
 			}
 			if(animacion.sprite.name.Equals("dado sf_4"))
 			{
-				valor=5;
-
+				return 5;
 			}
 			if(animacion.sprite.name.Equals("dado sf_5"))
 			{
-				valor=6;
-	
+				return 6;	
 			}
 		}
 	}

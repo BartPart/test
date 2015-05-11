@@ -7,11 +7,13 @@ public class movimiento : MonoBehaviour {
 	public Vector2 velocity;
 	bool facingRight = true;
 	StopDice scriptDice;
+	Rigidbody2D rigit;
 
 	// Use this for initialization
 	void Start () {
 
 		scriptDice = GetComponent<StopDice>();
+		rigit = GetComponent<Rigidbody2D> ();
 	
 	}
 	
