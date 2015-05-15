@@ -13,16 +13,14 @@ public class StopDice : MonoBehaviour {
 	public int valor;
 
 
+
 	List<pregunta> Trivial = new List<pregunta>();
 	private Rect windowRect;// = new Rect(10, 20, 850, 400);
 
 	void Start ()
 	{
-		anim = GetComponent<Animator>();
-		animacion = GetComponent<SpriteRenderer>();
+		clicks = 0;
 		valor = 0;
-
-
 	}
 
 
@@ -30,16 +28,12 @@ public class StopDice : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-	
+		if (Input.GetMouseButton(0)) {
 
-		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-		{
-			startDice();
+			OnMouseUp ();
 
 		}
 	}
-
-
 
 	public int obtenerValor()
 	{
@@ -74,20 +68,28 @@ public class StopDice : MonoBehaviour {
 		}
 	}
 
-	public void startDice(){
-
-
+	public void OnMouseUp (){
 
 		if (anim.speed == 1) {
 		
 			anim.speed = 0;
+			valor = obtenerValor ();
 			/*questions();
 			OnGUI();*/
 
 		} else {
+			restart();
 
+		}
+
+	}
+	public void restart(){
+	
+		if(anim.speed==0) {
+			
 			anim.speed = 1;
 		}
+	
 	}
 
 	/*
