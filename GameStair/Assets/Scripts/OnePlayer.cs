@@ -3,16 +3,13 @@ using System.Collections;
 
 public class OnePlayer : MonoBehaviour {
 
-	// Declare variables
 	private int clicks;
 	
-	// Use this for initialization
 	void Start ()
 	{
 		clicks = 0;
 	}
 	
-	// Update is called once per frame
 	void Update ()
 	{
 		if (clicks > 1)
@@ -23,7 +20,6 @@ public class OnePlayer : MonoBehaviour {
 	
 	void OnMouseUp ()
 	{
-
 		Application.LoadLevel ("FirstScene");
 	}
 }
