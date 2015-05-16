@@ -65,6 +65,15 @@ public class pregunta {
 		return respuesta5;
 	}
 
+	public int getResp(){
+		return correcta;
+	}
+
+	public int getId()
+	{
+		return id;
+	}
+
 	/*
 	public void setListaOpciones(List<string>options)
 	{

@@ -1,11 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEditor;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PreguntaScene : MonoBehaviour {
 	
 	// Declare variables
 	private int clicks;
-	
 	// Use this for initialization
 	void Start ()
 	{
@@ -25,5 +27,9 @@ public class PreguntaScene : MonoBehaviour {
 	{
 		Debug.Log("Usted selecciono el boton de pregunta!");
 		Application.LoadLevel ("Pregunta");
+
 	}
+
+
+
 }

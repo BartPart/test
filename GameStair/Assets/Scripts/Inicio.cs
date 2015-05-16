@@ -24,6 +24,6 @@ public class Inicio : MonoBehaviour {
 	void OnMouseUp ()
 	{
 		Debug.Log("Usted selecciono el boton inicio!");
-		Application.LoadLevel ("FirstScene");
+		Application.LoadLevel ("PlayerOption");
 	}
 }

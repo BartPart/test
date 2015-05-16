@@ -11,7 +11,7 @@ public class StopDice : MonoBehaviour {
 	public Animator anim;
 	public SpriteRenderer animacion;
 	public int valor;
-
+	piso floor = new piso ();
 
 
 	List<pregunta> Trivial = new List<pregunta>();
@@ -19,8 +19,11 @@ public class StopDice : MonoBehaviour {
 
 	void Start ()
 	{
-		clicks = 0;
+		anim = GetComponent<Animator>();
+		animacion = GetComponent<SpriteRenderer>();
 		valor = 0;
+
+
 	}
 
 
@@ -28,68 +31,62 @@ public class StopDice : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (Input.GetMouseButton(0)) {
-
-			OnMouseUp ();
+		if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+		{
+			startDice();
 
 		}
 	}
 
-	public int obtenerValor()
+
+
+	public void obtenerValor()
 	{
+		int aux = 0;
 		if (anim.speed == 0) {
 
 			if (animacion.sprite.name.Equals ("dado sf_0")) {
-				return 1;
+				aux= 1;
 			}
 			if (animacion.sprite.name.Equals ("dado sf_1")) {
-				return 2;
+				aux= 2;
 
 			}
 			if (animacion.sprite.name.Equals ("dado sf_2")) {
-				return 3;
+				aux= 3;
 
 			}
 			if (animacion.sprite.name.Equals ("dado sf_3")) {
-				return 4;
+				aux= 4;
 	
 			}
 			if (animacion.sprite.name.Equals ("dado sf_4")) {
-				return 5;
+				aux= 5;
 
 			}
 			if (animacion.sprite.name.Equals ("dado sf_5")) {
-				return 6;
-	
+				aux= 6;
 			}
-			return 0;
-		} else {
-			return 0;
+			Debug.Log("entra");
+			aux = aux+floor.getNum();
+			floor.setNum(aux);
 		}
 	}
 
-	public void OnMouseUp (){
+	public void startDice(){
+
+
 
 		if (anim.speed == 1) {
 		
 			anim.speed = 0;
-			valor = obtenerValor ();
 			/*questions();
 			OnGUI();*/
 
 		} else {
-			restart();
 
-		}
-
-	}
-	public void restart(){
-	
-		if(anim.speed==0) {
-			
 			anim.speed = 1;
 		}
-	
 	}
 
 	/*

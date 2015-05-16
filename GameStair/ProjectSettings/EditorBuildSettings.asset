@@ -11,3 +11,7 @@ EditorBuildSettings:
     path: Assets/Scene/FirstScene.unity
   - enabled: 1
     path: Assets/Scene/Pregunta.unity
+  - enabled: 1
+    path: Assets/Scene/SecondScene.unity
+  - enabled: 1
+    path: Assets/Scene/PlayerOption.unity
