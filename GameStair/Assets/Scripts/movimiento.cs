@@ -21,6 +21,11 @@ public class movimiento : MonoBehaviour {
 	public Rect windowWarn= new Rect (0, 0, 0, 0);
 	public Rect windowWarnB= new Rect (0, 0, 0, 0);
 	public Rect windowLb= new Rect (0, 0, 0, 0);
+	public Rect windowBQ1= new Rect (0, 0, 0, 0);
+	public Rect windowBQ2= new Rect (0, 0, 0, 0);
+	public Rect windowBQ3= new Rect (0, 0, 0, 0);
+	public Rect windowBQ4= new Rect (0, 0, 0, 0);
+	public Rect windowBQ5= new Rect (0, 0, 0, 0);
 	public string warning="";
 	public string warningB ="";
 	public string ms1 ="";
@@ -39,14 +44,20 @@ public class movimiento : MonoBehaviour {
 	int e=0;
 	int f=0;
 	int g=0;
+	int a3=0;
+	int b2=0;
+	int c2=0;
+	int c3=0;
+	int c4=0;
+	int c5=0;
+	int f4=0;
+	int d2=0;
+	int d3=0;
+	int d4=0;
+	int d5=0;
+	int e4 =0;
+	int e5=0;
 
-	/*int a = 50;
-	int b = 50;
-	int c = 150;
-	int d = 50;
-	int e = 330; 
-	int f = 150;
-	int g = 250;*/
 
 	int w1=0;
 	int w2=0;
@@ -70,7 +81,7 @@ public class movimiento : MonoBehaviour {
 	void FixedUpdate()
 	{
 
-		if (click > 1)
+		if (click > 1 && doWindow0 == false)
 		{
 			OnMouseUp();
 		}
@@ -112,6 +123,20 @@ public class movimiento : MonoBehaviour {
 				e = quest.getE();
 				f = quest.getF();
 				g = quest.getG();
+
+				a3 = a;
+				b2 = b;
+				c2 = c;
+				c3 = c;
+				c4 = c;
+				c5 = c;
+				f4 = f;
+				d2 = d;
+				d3 = d;
+				d4 = d;
+				d5 = d;
+				e4 = e;
+				e5 = e;
 
 				w1 = quest.getW1();
 				w2 = quest.getW2();
@@ -192,104 +217,157 @@ public class movimiento : MonoBehaviour {
 
 	public void answer(int resp, int numq)
 	{
-		Debug.Log ("resp: "+resp);
+		//Debug.Log ("resp: "+resp);
 		int k = 0;
 		int l = 0;
-		if(numq==1 || numq==2)
-		{
-			k = b+70;
-			l = b+110;
-		}
-		if(numq==3 || numq==4)
-		{
-			k = f+70;
-			l = f+110;
-		}
-		if(numq==5)
-		{
-			k = g+70;
-			l = g+110;
-		}
+		int n = a;
 
 		if(help.getResp ()==1)
 		{
 			Debug.Log ("entra1");
-			//doWindow0=false;
-			windowRect=new Rect (0, 0, 0, 0);
-			//windowLb= new Rect (0, 0, 0, 0);
-			//windowLb=new Rect (w1, w2, w3, w4);
-			GUI.TextField (new Rect (20, 170, 250, 30), "Ingrese la segunda opción de respuesta:");
-			//GUI.Label (new Rect (a, b, c, d), q1);
-			//string text = GUI.TextField (new Rect (e, b, c, d), q2);
+
+
+			k = b+70;
+			l = b+110;
+
+			e=0;
+			f=0;
+			g=0;
+			a3=0;
+			b2=0;
+			c2=0;
+			c3=0;
+			c4=0;
+			c5=0;
+			f4=0;
+			d2=0;
+			d3=0;
+			d4=0;
+			d5=0;
+			e5=0;
 
 		}
 		else{
 			if(help.getResp ()==2)
 			{
 				Debug.Log ("entra2");
-				//doWindow0=false;
-				windowRect=new Rect (0, 0, 0, 0);
-				//windowLb= new Rect (0, 0, 0, 0);
-				//windowLb=new Rect (w1, w2, w3, w4);
-				GUI.TextField (new Rect (20, 170, 250, 30), "Ingrese la segunda opción de respuesta:");
-				//GUI.Label (new Rect (a, b, c, d), q1);
-				//string text = GUI.TextField (new Rect (e, b, c, d), q2);
+
+				k = b+70;
+				l = b+110;
+
+				a=0;
+				b=0;
+				c=0;
+				d=0;
+				f=0;
+				g=0;
+				a3=0;
+				c3=0;
+				c4=0;
+				c5=0;
+				f4=0;
+				d3=0;
+				d4=0;
+				d5=0;
+				e5=0;
+
 			}
 			else{
 				if(help.getResp ()==3)
 				{
 					Debug.Log ("entra3");
-					//doWindow0=false;
-					windowRect=new Rect (0, 0, 0, 0);
-					//windowLb= new Rect (0, 0, 0, 0);
-					//windowLb=new Rect (w1, w2, w3, w4);
-					GUI.TextField (new Rect (20, 170, 250, 30), "Ingrese la segunda opción de respuesta:");
-					//GUI.Label (new Rect (a, b, c, d), q1);
-					//string text = GUI.TextField (new Rect (e, b, c, d), q2);
+
+					k = f+70;
+					l = f+110;
+	
+					a=0;
+					b=0;
+					c=0;
+					d=0;
+					e=0;
+					f=0;
+					g=0;
+					b2=0;
+					c2=0;
+					c4=0;
+					c5=0;
+					f4=0;
+					d2=0;
+					d4=0;
+					d5=0;
+					e5=0;
+
 
 				}
 				else{
 					if(help.getResp ()==4)
 					{
 						Debug.Log ("entra4");
-						//doWindow0=false;
-						windowRect=new Rect (0, 0, 0, 0);
-						//windowLb= new Rect (0, 0, 0, 0);
-						//windowLb=new Rect (w1, w2, w3, w4);
-						GUI.TextField (new Rect (20, 170, 250, 30), "Ingrese la segunda opción de respuesta:");
-						//GUI.Label (new Rect (a, b, c, d), q1);
-						//string text = GUI.TextField (new Rect (e, b, c, d), q2);
+
+						k = f+70;
+						l = f+110;
+
+						a=0;
+						b=0;
+						c=0;
+						d=0;
+						e=0;
+						f=0;
+						g=0;
+						a3=0;
+						b2=0;
+						c2=0;
+						c3=0;
+						c5=0;
+						d2=0;
+						d3=0;
+						d5=0;
+						e5=0;
 					}
 					else{
 						Debug.Log ("entra5");
-						//doWindow0=false;
-						windowRect=new Rect (0, 0, 0, 0);
-						//windowLb= new Rect (0, 0, 0, 0);
-						//windowLb=new Rect (w1, w2, w3, w4);
-						GUI.TextField (new Rect (20, 170, 250, 30), "Ingrese la segunda opción de respuesta:");
-						//GUI.Label (new Rect (a, b, c, d), q1);
-						//string text = GUI.TextField (new Rect (e, b, c, d), q2);
+
+						k = g+70;
+						l = g+110;
+
+						a=0;
+						b=0;
+						c=0;
+						d=0;
+						e=0;
+						f=0;
+						a3=0;
+						b2=0;
+						c2=0;
+						c3=0;
+						c4=0;
+						f4=0;
+						d2=0;
+						d3=0;
+						d4=0;
+						e4=0;
+
 					}
 				}
 			}
 
 		}
-		/*
+
 		if (resp == help.getResp ()) {
 			ms1 = "¡Haz acertado la pregunta! :D";
 			warningB ="Aceptar";
 			windowWarn=new Rect (0, 0, 0, 0);
 			windowWarnB=new Rect (0, 0, 0, 0);
-			windowWarn= new Rect (a, k, 300, 30);
-			windowWarnB= new Rect (a, l, 100, 30);
+			windowWarn= new Rect (n, k, 300, 30);
+			windowWarnB= new Rect (n, l, 100, 30);
 		} else {
 			ms1 = "No haz acertado la pregunta :(, la respuesta correcta era la #"+help.getResp ();
 			warningB ="Aceptar";
 			windowWarn=new Rect (0, 0, 0, 0);
 			windowWarnB=new Rect (0, 0, 0, 0);
-			windowWarn= new Rect (a, k, 380, 30);
-			windowWarnB= new Rect (a, l, 100, 30);
-		}*/
+			windowWarn= new Rect (n, k, 380, 30);
+			windowWarnB= new Rect (n, l, 100, 30);
+		}
 	}
 
 	public int contarOp(string q1,string q2,string q3,string q4,string q5)
@@ -299,25 +377,32 @@ public class movimiento : MonoBehaviour {
 		if(q1!=null)
 		{
 			cont++;
+			windowBQ1= new Rect (a, b, c, d);
 		}
 		if(q2!=null)
 		{
 			cont++;
+			windowBQ2= new Rect (e, b2, c2, d2);
 		}
 		if(q3!=null)
 		{
 			cont++;
+			windowBQ3= new Rect (a3, f, c3, d3);
+
 		}
 		if(q4!=null)
 		{
 			cont++;
+			windowBQ4= new Rect (e4, f4, c4, d4);
 		}
 		if(q5!=null)
 		{
 			cont++;
+			windowBQ5= new Rect (g, e5, c5, d5);
 		}
 
 		return cont;
+
 	}
 
 	public void DoMyWindow(int windowID) {
@@ -329,11 +414,11 @@ public class movimiento : MonoBehaviour {
 		q5=p[index].getResp5();
 		int resp = 0;
 		int numop = contarOp(q1,q2,q3,q4,q5);
-		Debug.Log (numop);
+		//Debug.Log (numop);
 
 			//string[] options = new string[] {q1, q2, q3, q4};
 			
-			//if (GUI.Button(new Rect(10, 20, 100, 20), q1)) 
+			/*if (GUI.Button(new Rect(10, 20, 100, 20), q1)) 
 			if (q1 != null) {
 			windowLb= new Rect (a, b, c, d);
 			if (GUI.Button (windowLb, q1))
@@ -374,6 +459,36 @@ public class movimiento : MonoBehaviour {
 				//Debug.Log(5);//
 				answer (5,numop);
 			}
+		}*/
+
+		if (GUI.Button (windowBQ1, q1))
+		{
+			//Debug.Log(1);//
+			answer (1,numop);
+		}
+
+		if (GUI.Button (windowBQ2, q2))
+		{
+			//Debug.Log(1);//
+			answer (2,numop);
+		}
+
+		if (GUI.Button (windowBQ3, q3))
+		{
+			//Debug.Log(1);//
+			answer (3,numop);
+		}
+
+		if (GUI.Button (windowBQ4, q4))
+		{
+			//Debug.Log(1);//
+			answer (4,numop);
+		}
+
+		if (GUI.Button (windowBQ5, q5))
+		{
+			//Debug.Log(1);//
+			answer (5,numop);
 		}
 
 		warning = GUI.TextField ( windowWarn, ms1);
@@ -384,12 +499,33 @@ public class movimiento : MonoBehaviour {
 			warningB = "";
 			windowWarn = new Rect (0, 0, 0, 0);
 			windowWarnB = new Rect (0, 0, 0, 0);
-
+			q1="";
 			q2="";
 			q3="";
 			q4="";
 			q5="";
-
+			a=0;
+			b=0;
+			c=0;
+			d=0;
+			e=0;
+			f=0;
+			g=0;
+			a3=0;
+			b2=0;
+			c2=0;
+			c3=0;
+			c4=0;
+			c5=0;
+			f4=0;
+			d2=0;
+			d3=0;
+			d4=0;
+			d5=0;
+			e4=0;
+			e5=0;
+			windowRect=new Rect (0, 0, 0, 0);
+			doWindow0 = false;
 		}
 				
 
